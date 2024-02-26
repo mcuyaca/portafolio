@@ -1,5 +1,3 @@
-import React from "react";
-
 function Skills() {
   return (
     <section className="w-full border-t py-12  md:py-24 lg:py-32" id="Skills">

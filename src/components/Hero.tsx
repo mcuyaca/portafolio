@@ -1,11 +1,4 @@
-import {
-  Download,
-  GithubIcon,
-  LinkedinIcon,
-  Mail,
-  MailOpen,
-  TwitterIcon,
-} from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function Hero() {
