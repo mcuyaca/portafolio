@@ -10,7 +10,8 @@ function Projects() {
             My Projects
           </h2>
           <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Check out some of the cool projects I've worked on.
+            Echa un vistazo a algunos de los proyectos interesantes en los que
+            he trabajado.
           </p>
         </div>
         <div className="grid gap-6 px-16 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
