@@ -51,7 +51,7 @@ function Projects() {
                     height="225"
                     src={`/${project.name}.png`}
                   />
-                  <div className="flex flex-1 flex-col gap-2 p-4">
+                  <div className="flex flex-1 flex-col gap-3 p-4">
                     <h3 className="text-xl font-bold">{project.name}</h3>
                     <p className="text-pretty text-sm text-gray-500 dark:text-gray-400">
                       {project.description}
@@ -60,7 +60,7 @@ function Projects() {
                       {project.technologies.map((tech, index) => (
                         <img
                           key={index}
-                          className="h-10 w-10 fill-current "
+                          className="h-10 w-10 "
                           src={`/icons/${tech.toLowerCase()}.svg`}
                           alt={`${tech} icon`}
                         />

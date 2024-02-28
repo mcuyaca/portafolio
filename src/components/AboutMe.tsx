@@ -28,7 +28,11 @@ function AboutMe() {
               className="flex flex-col items-center justify-center space-y-1"
               href="https://www.linkedin.com/in/mcuyaca/"
             >
-              <LinkedinIcon className="h-6 w-6" />
+              <img
+                className="h-14 w-14"
+                src="/icons/linkedin.svg"
+                alt="Linkedin icon"
+              />
               <span className="text-xs text-gray-500 dark:text-gray-400">
                 LinkedIn
               </span>
@@ -37,7 +41,11 @@ function AboutMe() {
               className="flex flex-col items-center justify-center space-y-1"
               href="#"
             >
-              <GithubIcon className="h-6 w-6" />
+              <img
+                className="h-14 w-14"
+                src="/icons/github.svg"
+                alt="Github icon"
+              />
               <span className="text-xs text-gray-500 dark:text-gray-400">
                 GitHub
               </span>
