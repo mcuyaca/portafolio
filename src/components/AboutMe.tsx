@@ -39,7 +39,7 @@ function AboutMe() {
             </a>
             <a
               className="flex flex-col items-center justify-center space-y-1"
-              href="#"
+              href="https://github.com/mcuyaca"
             >
               <img
                 className="h-14 w-14"
