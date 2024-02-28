@@ -1,6 +1,32 @@
 import { Card, CardContent, CardFooter } from "./ui/card";
 import { Button } from "./ui/button";
 
+const projects = [
+  {
+    name: "Validify",
+    description:
+      "Validify es una aplicación Full Stack que tiene como objetivo permitir cargar archivos CSV para la creación de registros en una base de datos PostgreSQL.",
+    technologies: ["ReactRouter", "Tailwind", "Nodejs", "PostgreSQL"],
+    githubLink: "https://github.com/mcuyaca/Validify",
+  },
+  {
+    name: "Codeable Keep",
+    description:
+      "Codeable Keep es una Single Page Application (SPA) que permite a los usuarios crear, editar, organizar y eliminar notas de una manera intuitiva y eficiente.",
+    technologies: ["React", "Tailwind", "Nodejs", "PostgreSQL"],
+    githubLink: "https://github.com/mcuyaca/CodeableKeep",
+    websiteLink: "https://codeable-keep.vercel.app/",
+  },
+  {
+    name: "DoggyDomDrawer",
+    description:
+      "DoggyDomDrawer es una aplicación que te permite agregar descripciones o datos a una imagen directamente desde el navegador, los cuales luego puedes descargar.",
+    technologies: ["Astro", "Tailwind", "JavaScript"],
+    githubLink: "https://github.com/mcuyaca/DoggyDomDrawer",
+    websiteLink: "https://doggy-dom-drawer.vercel.app/",
+  },
+];
+
 function Projects() {
   return (
     <section className="w-full border-t py-12 md:py-24 lg:py-32" id="Projects">
@@ -15,107 +41,55 @@ function Projects() {
           </p>
         </div>
         <div className="grid gap-6 px-16 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <div className="flex h-full flex-col">
-              <CardContent className="flex-1  p-0">
-                <img
-                  alt="Project"
-                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
-                  height="225"
-                  src="/Validify.png"
-                />
-                <div className="flex flex-1 flex-col gap-2 p-4">
-                  <h3 className="text-xl font-bold">Validify</h3>
-                  <p className="text-pretty text-sm text-gray-500 dark:text-gray-400">
-                    Validify es una aplicación Full Stack que tiene como
-                    objetivo permitir cargar archivos CSV para la creación de
-                    registros en una base de datos PostgreSQl.
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter className="gap-2">
-                <a
-                  href="https://github.com/mcuyaca/Validify"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline">Ver Github</Button>
-                </a>
-              </CardFooter>
-            </div>
-          </Card>
-          <Card>
-            <div className="flex h-full flex-col">
-              <CardContent className="flex-1  p-0">
-                <img
-                  alt="Project"
-                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
-                  height="225"
-                  src="/Keep.png"
-                />
-                <div className="flex flex-1 flex-col gap-2 p-4">
-                  <h3 className="text-xl font-bold">Codeable Keep</h3>
-                  <p className="text-pretty text-sm text-gray-500 dark:text-gray-400">
-                    Codeable Keep es una Single Page Application (SPA) que
-                    permite a los usuarios crear, editar, organizar y eliminar
-                    notas de una manera intuitiva y eficiente.
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter className="gap-4">
-                <a
-                  href="https://github.com/mcuyaca/CodeableKeep"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline">Ver Github</Button>
-                </a>
+          {projects.map((project, index) => (
+            <Card key={index}>
+              <div className="flex h-full flex-col">
+                <CardContent className="flex-1  p-0">
+                  <img
+                    alt={project.name}
+                    className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
+                    height="225"
+                    src={`/${project.name}.png`}
+                  />
+                  <div className="flex flex-1 flex-col gap-2 p-4">
+                    <h3 className="text-xl font-bold">{project.name}</h3>
+                    <p className="text-pretty text-sm text-gray-500 dark:text-gray-400">
+                      {project.description}
+                    </p>
+                    <div className="flex justify-center gap-4">
+                      {project.technologies.map((tech, index) => (
+                        <img
+                          key={index}
+                          className="h-10 w-10 fill-current "
+                          src={`/icons/${tech.toLowerCase()}.svg`}
+                          alt={`${tech} icon`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="gap-4">
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline">Ver en GitHub</Button>
+                  </a>
 
-                <a
-                  href="https://codeable-keep.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline">Ver página</Button>
-                </a>
-              </CardFooter>
-            </div>
-          </Card>
-          <Card>
-            <div className="flex h-full flex-col">
-              <CardContent className="flex-1  p-0">
-                <img
-                  alt="Project"
-                  className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
-                  height="225"
-                  src="/Doggy.png"
-                />
-                <div className="flex flex-1 flex-col gap-2 p-4">
-                  <h3 className="text-xl font-bold">DoggyDomDrawer</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    DoggyDomDrawer es una aplicación que te permite añadir
-                    descripciones o datos a una imagen.
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter className="gap-4">
-                <a
-                  href="https://github.com/mcuyaca/DoggyDomDrawer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline">Ver en GitHub</Button>
-                </a>
-                <a
-                  href="https://doggy-dom-drawer.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline">Ver página</Button>
-                </a>
-              </CardFooter>
-            </div>
-          </Card>
+                  {project.websiteLink && (
+                    <a
+                      href={project.websiteLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline">Ver página</Button>
+                    </a>
+                  )}
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
