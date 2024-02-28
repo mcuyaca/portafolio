@@ -77,5 +77,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@iconify/tailwind")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@midudev/tailwind-animations"),
+  ],
 };

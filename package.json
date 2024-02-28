@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ark-ui/react": "^2.0.1",
+    "@midudev/tailwind-animations": "^0.0.7",
     "@park-ui/tailwind-plugin": "^0.18.0",
     "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "^10.4.17",

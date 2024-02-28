@@ -1,7 +1,7 @@
 const skillsData = [
   {
-    name: "JavaScript",
-    icon: "/icons/javascript.svg",
+    name: "JavaScript/Typescript",
+    icons: ["/icons/javascript.svg", "/icons/typescript.svg"],
     description:
       "Experiencia en la creación de aplicaciones frontend con frameworks como React, React Router y Astro.",
   },

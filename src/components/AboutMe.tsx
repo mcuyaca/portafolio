@@ -11,7 +11,7 @@ function AboutMe() {
             Soy ingeniero civil, pero descubri mi pasión cuando buscaba ser mas
             eficiente al hacer mi trabajo. Me di cuenta de que podía desarrollar
             proyectos que solucionen problemas cotidianos, lo que me llevó a
-            decidir decicarme a la programación.
+            decidir dedicarme a la programación.
           </p>
 
           <p className=" mx-auto max-w-[600px] text-pretty text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -28,11 +28,11 @@ function AboutMe() {
               target="_blank"
             >
               <img
-                className="h-14 w-14"
+                className=" repeat- h-14 w-14 hover:animate-tada "
                 src="/icons/linkedin.svg"
                 alt="Linkedin icon"
               />
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+              <span className=" text-xs text-gray-500 dark:text-gray-400">
                 LinkedIn
               </span>
             </a>
@@ -42,7 +42,7 @@ function AboutMe() {
               target="_blank"
             >
               <img
-                className="h-14 w-14"
+                className="  h-14 w-14 hover:animate-tada"
                 src="/icons/github.svg"
                 alt="Github icon"
               />

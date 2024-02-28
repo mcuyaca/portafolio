@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
+import ToTop from "./components/ToTop";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Projects />
       </main>
       <Footer />
+      <ToTop />
     </div>
   );
 }

@@ -47,7 +47,7 @@ function Projects() {
                 <CardContent className="flex-1  p-0">
                   <img
                     alt={project.name}
-                    className="aspect-video overflow-hidden rounded-t-lg object-cover object-center"
+                    className="aspect-video overflow-hidden rounded-t-lg object-cover object-center "
                     height="225"
                     src={`/${project.name}.png`}
                   />
@@ -60,7 +60,7 @@ function Projects() {
                       {project.technologies.map((tech, index) => (
                         <img
                           key={index}
-                          className="h-10 w-10 "
+                          className=" h-10 w-10 "
                           src={`/icons/${tech.toLowerCase()}.svg`}
                           alt={`${tech} icon`}
                         />
