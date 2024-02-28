@@ -1,5 +1,3 @@
-import { GithubIcon, LinkedinIcon } from "lucide-react";
-
 function AboutMe() {
   return (
     <section className="w-full border-t py-12 md:py-24 lg:py-32" id="AboutMe">
@@ -27,6 +25,7 @@ function AboutMe() {
             <a
               className="flex flex-col items-center justify-center space-y-1"
               href="https://www.linkedin.com/in/mcuyaca/"
+              target="_blank"
             >
               <img
                 className="h-14 w-14"
@@ -40,6 +39,7 @@ function AboutMe() {
             <a
               className="flex flex-col items-center justify-center space-y-1"
               href="https://github.com/mcuyaca"
+              target="_blank"
             >
               <img
                 className="h-14 w-14"
