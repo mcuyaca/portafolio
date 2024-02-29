@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col ">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 animate-fade-in ">
         <Hero />
         <AboutMe />
         <Skills />

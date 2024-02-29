@@ -1,6 +1,6 @@
 function AboutMe() {
   return (
-    <section className="w-full border-t py-12 md:py-24 lg:py-32" id="AboutMe">
+    <section className="w-full  border-t py-12 md:py-24 lg:py-32" id="AboutMe">
       <div className="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

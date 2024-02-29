@@ -10,6 +10,14 @@ const projects = [
     githubLink: "https://github.com/mcuyaca/Validify",
   },
   {
+    name: "Boardable",
+    description:
+      "Boardable es una aplicación Full Stack que permite a los usarios registrados gestionar tareas entre paneles y saber el estado de la tarea.",
+    technologies: ["ReactRouter", "Tailwind", "Nodejs", "PostgreSQL"],
+    githubLink: "https://github.com/mcuyaca/Boardable",
+    websiteLink: "https://boardable.vercel.app/",
+  },
+  {
     name: "Codeable Keep",
     description:
       "Codeable Keep es una Single Page Application (SPA) que permite a los usuarios crear, editar, organizar y eliminar notas de una manera intuitiva y eficiente.",
@@ -42,7 +50,10 @@ function Projects() {
         </div>
         <div className="grid gap-6 px-16 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index}>
+            <Card
+              className="hover:ring-4 hover:ring-border  hover:ring-offset-2 "
+              key={index}
+            >
               <div className="flex h-full flex-col">
                 <CardContent className="flex-1  p-0">
                   <img

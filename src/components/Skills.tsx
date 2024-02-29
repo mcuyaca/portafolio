@@ -20,7 +20,8 @@ const skillsData = [
   {
     name: "Database",
     icon: "/icons/database.svg",
-    description: "Familiarizado con bases de datos SQL, como PostgreSQL.",
+    description:
+      "Familiarizado con bases de datos SQL, como PostgreSQL. Además de implementar la migración de base de datos usando Umzug.",
   },
 ];
 
@@ -39,9 +40,9 @@ function Skills() {
         <div className="mx-auto grid max-w-5xl items-center gap-6 sm:gap-12">
           <ul className="grid gap-4 md:grid-cols-2 lg:gap-6 xl:gap-8">
             {skillsData.map((skill, index) => (
-              <li key={index} className="grid gap-2">
+              <li key={index} className="grid gap-2 ">
                 {Array.isArray(skill.icons) ? (
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-4  ">
                     {skill.icons.map((icon, i) => (
                       <img
                         key={i}
