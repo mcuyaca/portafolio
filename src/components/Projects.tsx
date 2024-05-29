@@ -48,7 +48,7 @@ function Projects() {
             he trabajado.
           </p>
         </div>
-        <div className="grid gap-6 px-16 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <Card
               className="hover:ring-4 hover:ring-border  hover:ring-offset-2 "
