@@ -79,7 +79,7 @@ function Projects() {
                     </div>
                   </div>
                 </CardContent>
-                <CardFooter className="gap-4">
+                <CardFooter className="gap-4 justify-center">
                   <a
                     href={project.githubLink}
                     target="_blank"
