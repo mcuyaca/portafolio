@@ -6,17 +6,16 @@ function AboutMe() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             About Me
           </h2>
-
           <p className="mx-auto max-w-[600px] text-pretty text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Soy ingeniero civil, pero descubri mi pasión cuando buscaba ser mas
             eficiente al hacer mi trabajo. Me di cuenta de que podía desarrollar
             proyectos que solucionen problemas cotidianos, lo que me llevó a
             decidir dedicarme a la programación.
           </p>
-
           <p className=" mx-auto max-w-[600px] text-pretty text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Me especializo en JavaScript y mis herramientas principales son
-            TypeScript, React y Node. ¡Contáctame para colaborar juntos!
+            TypeScript, Angular, React y Node.js ¡Contáctame para colaborar
+            juntos!
           </p>
         </div>
         <div className="space-y-4 ">

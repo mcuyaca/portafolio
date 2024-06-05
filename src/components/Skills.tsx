@@ -1,25 +1,25 @@
 const skillsData = [
   {
-    name: "JavaScript/Typescript",
-    icons: ["/icons/javascript.svg", "/icons/typescript.svg"],
+    name: " React Router | Angular | Astro",
+    icons: ["/icons/reactrouter.svg", "icons/angular.svg", "/icons/astro.svg"],
     description:
-      "Experiencia en la creación de aplicaciones frontend con frameworks como React, React Router y Astro.",
+      "Experiencia en la creación de aplicaciones frontend con frameworks como  React Router, Angular y Astro.",
   },
   {
-    name: "Node.js",
-    icon: "/icons/nodejs.svg",
+    name: "Node.js | Typescript",
+    icons: ["/icons/nodejs.svg", "/icons/typescript.svg"],
     description:
-      "Competente en desarrollo del lado del servidor y creación de API escalables usando Node.js y Express.",
+      "Competente en desarrollo del lado del servidor y creación de API escalables usando Node.js, Typescript y Express.",
   },
   {
-    name: "HTML/CSS",
-    icons: ["/icons/html5.svg", "/icons/css3.svg"],
+    name: "HTML | CSS | JS",
+    icons: ["/icons/html5.svg", "/icons/css3.svg", "/icons/javascript.svg"],
     description:
-      "Experto en la creación de diseños web responsivos y elegantes utilizando HTML5 y CSS3.",
+      "Experto en la creación de diseños web responsivos y elegantes utilizando HTML5, CSS3 y JavaScript.",
   },
   {
     name: "Database",
-    icon: "/icons/database.svg",
+    icons: ["/icons/database.svg", "icons/postgresql.svg"],
     description:
       "Familiarizado con bases de datos SQL, como PostgreSQL. Además de implementar la migración de base de datos usando Umzug.",
   },
@@ -41,7 +41,7 @@ function Skills() {
           <ul className="grid gap-4 md:grid-cols-2 lg:gap-6 xl:gap-8">
             {skillsData.map((skill, index) => (
               <li key={index} className="grid gap-2 ">
-                {Array.isArray(skill.icons) ? (
+                {
                   <div className="flex justify-center gap-4  ">
                     {skill.icons.map((icon, i) => (
                       <img
@@ -52,13 +52,7 @@ function Skills() {
                       />
                     ))}
                   </div>
-                ) : (
-                  <img
-                    className="mx-auto h-14 w-14"
-                    src={skill.icon}
-                    alt={`${skill.name} icon`}
-                  />
-                )}
+                }
                 <h3 className="text-xl font-bold">{skill.name}</h3>
                 <p className="text-pretty text-gray-500/70 dark:text-gray-400/70">
                   {skill.description}

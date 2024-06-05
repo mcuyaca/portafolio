@@ -3,6 +3,14 @@ import { Button } from "./ui/button";
 
 const projects = [
   {
+    name: "Angular Todo",
+    description:
+      "Angular Todo es una robusta aplicación diseñada para simplificar la gestión de tareas. Siguiendo los principios de CRUD (Crear, Leer, Actualizar, Eliminar).",
+    technologies: ["Angular", "Typescript", "html5", "css3"],
+    githubLink: "https://github.com/mcuyaca/laboratorio-mydayapp-angular",
+    websiteLink: "https://angular-todo-day.vercel.app/",
+  },
+  {
     name: "Validify",
     description:
       "Validify es una aplicación Full Stack que tiene como objetivo permitir cargar archivos CSV para la creación de registros en una base de datos PostgreSQL.",
@@ -79,7 +87,7 @@ function Projects() {
                     </div>
                   </div>
                 </CardContent>
-                <CardFooter className="gap-4 justify-center">
+                <CardFooter className="justify-center gap-4">
                   <a
                     href={project.githubLink}
                     target="_blank"
