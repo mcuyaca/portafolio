@@ -22,7 +22,7 @@ function Hero() {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1dWAnWzKkzRboXVNK_OE_7BZ0sLAIyWXT/view?usp=sharing"
+            href="https://drive.google.com/file/d/1eMad4C7ltI0FGdIfbvc7lXEKWXxM6YIf/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
