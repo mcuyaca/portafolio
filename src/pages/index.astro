@@ -1812,6 +1812,7 @@ let lang = 'en';
 
 function applyLang(l) {
   lang = l;
+  document.documentElement.lang = l;
   const t = TR[l];
 
   // text nodes
