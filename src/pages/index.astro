@@ -200,7 +200,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 8l4 4 4-4M2 14h12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <!-- BUG #1: btn-border-light tiene border gris claro sobre fondo claro — poco contraste y altura diferente al btn-split. Revisar si usar btn-outline o igualar altura/estilo con el botón de CV -->
         <a href="https://www.linkedin.com/in/mcuyaca/" target="_blank" rel="noopener" class="btn-border-light">LinkedIn →</a>
       </div>
     </div>
@@ -320,7 +319,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
           <span class="stack-item stack-item-primary">PostgreSQL</span>
           <span class="stack-item stack-item-primary">MongoDB</span>
           <span class="stack-item">SQL</span>
-          <span class="stack-item">Umzug</span>
+          <span class="stack-item">Supabase</span>
         </div>
       </div>
       <div class="stack-col">
@@ -684,6 +683,10 @@ a,button{cursor:none;}
   --muted:#5A5650;
   --rule:#DEDAD1;
   --placeholder:#9A968E;
+  --btn-accent-hover:#C4621A;
+  --btn-dark-bg:#0A0A09;
+  --btn-radius:4px;
+  --btn-transition:0.18s cubic-bezier(0.16,1,0.3,1);
 }
 
 /* ── Keyframes ─────────────────────────────────────── */
@@ -849,29 +852,41 @@ a,button{cursor:none;}
 /* split button */
 .btn-split{
   display:inline-flex;align-items:stretch;height:48px;
-  border-radius:4px;overflow:hidden;text-decoration:none;
-  transition:transform 0.18s cubic-bezier(0.16,1,0.3,1),box-shadow 0.18s;
+  border-radius:var(--btn-radius);overflow:hidden;text-decoration:none;
+  transition:transform var(--btn-transition),box-shadow var(--btn-transition);
 }
 .btn-split:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.25);}
 .btn-split:active{transform:translateY(0);}
+.btn-split:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  box-shadow:0 0 0 4px oklch(62% 0.20 50 / 0.18);
+}
 .btn-split-text{
   display:flex;align-items:center;padding:0 24px;
   background:rgba(245,240,230,0.10);border:1px solid rgba(245,240,230,0.22);
   border-right:none;color:var(--cream);
   font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;
-  white-space:nowrap;transition:background 0.18s,border-color 0.18s;
+  white-space:nowrap;
+  transition:background var(--btn-transition),border-color var(--btn-transition);
 }
-.btn-split:hover .btn-split-text{background:rgba(245,240,230,0.18);border-color:rgba(245,240,230,0.4);}
 .btn-split-icon{
   display:flex;align-items:center;justify-content:center;
   width:50px;flex-shrink:0;background:var(--accent);
-  transition:background 0.18s;
+  transition:background var(--btn-transition);
 }
-.btn-split:hover .btn-split-icon{background:#C4621A;}
+.btn-split:hover .btn-split-text{background:rgba(245,240,230,0.18);border-color:rgba(245,240,230,0.4);}
+.btn-split:hover .btn-split-icon{background:var(--btn-accent-hover);}
 .btn-split-dark .btn-split-text{
   background:var(--ink);border-color:var(--ink);
   color:var(--cream);
 }
+.btn-split-dark .btn-split-icon{background:var(--accent);}
+.btn-split-dark:hover .btn-split-text{
+  background:var(--btn-dark-bg);
+  border-color:var(--btn-dark-bg);
+}
+.btn-split-dark:hover .btn-split-icon{background:var(--btn-accent-hover);}
 .btn-split-sm{height:44px;}
 .btn-split-icon-sm{width:44px;}
 .btn-full{width:100%;}
@@ -880,33 +895,51 @@ a,button{cursor:none;}
 /* outline button (hero secondary) */
 .btn-outline{
   display:inline-flex;align-items:stretch;height:48px;
-  border-radius:4px;overflow:hidden;text-decoration:none;
-  transition:transform 0.18s cubic-bezier(0.16,1,0.3,1),box-shadow 0.18s;
+  border-radius:var(--btn-radius);overflow:hidden;text-decoration:none;
+  transition:transform var(--btn-transition),box-shadow var(--btn-transition);
 }
 .btn-outline:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
 .btn-outline:active{transform:translateY(0);}
+.btn-outline:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  box-shadow:0 0 0 4px oklch(62% 0.20 50 / 0.18);
+}
 .btn-outline-text{
   display:flex;align-items:center;padding:0 24px;
   border:1.5px solid rgba(245,240,230,0.45);border-right:none;
   color:rgba(245,240,230,0.75);
   font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;
   white-space:nowrap;
+  transition:border-color var(--btn-transition),background var(--btn-transition),color var(--btn-transition);
 }
 .btn-outline-icon{
   display:flex;align-items:center;justify-content:center;width:50px;
   border:1.5px solid rgba(245,240,230,0.45);
   background:rgba(245,240,230,0.06);color:rgba(245,240,230,0.60);
+  transition:border-color var(--btn-transition),background var(--btn-transition),color var(--btn-transition);
+}
+.btn-outline:hover .btn-outline-text,
+.btn-outline:hover .btn-outline-icon{
+  border-color:rgba(245,240,230,0.78);
+  background:rgba(245,240,230,0.12);
+  color:var(--cream);
 }
 
 .btn-border-light{
   display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 20px;
-  border:1.5px solid rgba(17,17,16,0.18);border-radius:4px;
+  border:1.5px solid rgba(17,17,16,0.30);border-radius:var(--btn-radius);
   font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;
   color:#3D3A36;text-decoration:none;
-  transition:border-color 0.18s,color 0.18s,transform 0.18s,box-shadow 0.18s;
+  transition:border-color var(--btn-transition),color var(--btn-transition),transform var(--btn-transition),box-shadow var(--btn-transition);
 }
 .btn-border-light:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.1);}
 .btn-border-light:active{transform:translateY(0);}
+.btn-border-light:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  box-shadow:0 0 0 4px oklch(62% 0.20 50 / 0.18);
+}
 
 /* tags */
 .tag{
@@ -1055,12 +1088,6 @@ a,button{cursor:none;}
   border-color:rgba(245,240,230,0.78);
   background:rgba(245,240,230,0.12);
   color:var(--hero-primary);
-}
-.hero-ctas .btn-split:focus-visible,
-.hero-ctas .btn-outline:focus-visible{
-  outline:2px solid var(--hero-accent);
-  outline-offset:3px;
-  box-shadow:0 0 0 4px oklch(62% 0.20 50 / 0.18);
 }
 
 /* Status panel */
@@ -1287,7 +1314,7 @@ a,button{cursor:none;}
 
 /* project tabs */
 .proj-tabs{
-  display:grid;grid-template-columns:repeat(7,1fr);gap:3px;
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:3px;
 }
 .proj-tab{
   background:#FFFFFF;padding:20px 24px;
