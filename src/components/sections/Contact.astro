@@ -1,0 +1,31 @@
+---
+import ContactInfo from '../contact/ContactInfo.astro';
+import ContactForm from '../contact/ContactForm.astro';
+const { turnstileSiteKey } = Astro.props;
+---
+<section id="contact" class="section-light">
+  <div data-grain class="grain-layer"></div>
+  <div class="dashed-cols dashed-cols-light" aria-hidden="true">
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div>
+  </div>
+  <div class="mc-contact-grid contact-grid section-inner">
+    <ContactInfo />
+    <ContactForm turnstileSiteKey={turnstileSiteKey} />
+  </div>
+</section>
+
+<style>
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+
+@media(max-width:768px){
+  .mc-contact-grid{grid-template-columns:1fr!important;gap:40px!important;padding:60px 24px!important;}
+}
+@media(max-width:480px){
+  .contact-links{grid-template-columns:1fr!important;}
+}
+</style>

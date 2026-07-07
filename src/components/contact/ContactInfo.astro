@@ -1,0 +1,74 @@
+<div data-reveal class="contact-info">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-rule"></span>
+    <span class="section-title" data-i18n="contactLabel">Contact</span>
+  </div>
+  <p class="contact-p" data-i18n="contactP">Have a project in mind or just want to talk tech? I'm always open to new conversations.</p>
+  <div class="contact-status">
+    <span class="pulse-dot green"></span>
+    <span data-i18n="statusOpen">Open to work</span>
+    <span class="contact-sep"> · </span>
+    <span data-i18n="respondsIn">Replies within 24h</span>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:mcuya.ca@gmail.com" class="contact-link-card contact-link-dark">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="white" stroke-width="1.6"/><path d="M4 7L12 12.5L20 7" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="contact-link-text">
+        <span class="contact-link-name">Email</span>
+        <span class="contact-link-handle">mcuya.ca@gmail.com</span>
+      </div>
+    </a>
+    <a href="https://github.com/mcuyaca" target="_blank" rel="noopener" class="contact-link-card contact-link-dark">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+      <div class="contact-link-text">
+        <span class="contact-link-name">GitHub</span>
+        <span class="contact-link-handle">@mcuyaca</span>
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/in/mcuyaca/" target="_blank" rel="noopener" class="contact-link-card contact-link-linkedin">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      <div class="contact-link-text">
+        <span class="contact-link-name">LinkedIn</span>
+        <span class="contact-link-handle">mcuyaca</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+.contact-info{display:flex;flex-direction:column;gap:28px;}
+.contact-p{
+  font-family:'Space Grotesk',sans-serif;font-size:15px;
+  line-height:1.72;color:var(--muted);max-width:340px;
+}
+.contact-status{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:8px 15px;border:1px solid rgba(17,17,16,0.12);
+  border-radius:99px;width:fit-content;background:#FFFFFF;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:0.04em;color:var(--muted);
+}
+.contact-sep{color:var(--rule);}
+.contact-links{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.contact-link-card{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  padding:28px 16px;border-radius:8px;text-decoration:none;
+  transition:transform 0.18s,background 0.18s;
+}
+.contact-link-card:hover{transform:translateY(-3px);}
+.contact-link-dark{background:var(--ink);}
+.contact-link-dark:hover{background:#1C1B18;}
+.contact-link-linkedin{background:#0A66C2;}
+.contact-link-linkedin:hover{background:#0958A8;}
+.contact-link-text{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.contact-link-name{
+  font-family:'Space Grotesk',sans-serif;font-size:13px;
+  font-weight:600;color:var(--cream);letter-spacing:0.01em;
+}
+.contact-link-handle{
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  color:rgba(245,240,230,0.6);letter-spacing:0.02em;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;
+}
+</style>

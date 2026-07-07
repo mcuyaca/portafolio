@@ -1,0 +1,19 @@
+<div id="mc-preloader">
+  <div class="pre-logo"><span class="accent">/</span>MCUYA</div>
+  <div class="pre-track"><div class="pre-bar"></div></div>
+  <div class="pre-label">Initializing</div>
+</div>
+
+<style>
+#mc-preloader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:20px;
+  transition:opacity 0.65s ease;
+}
+.pre-logo{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:0.08em;color:var(--cream);}
+.pre-track{width:180px;height:1px;background:rgba(245,240,230,0.1);overflow:hidden;}
+.pre-bar{height:100%;background:var(--accent);animation:preBar 1.6s cubic-bezier(0.16,1,0.3,1) forwards;}
+.pre-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;color:rgba(245,240,230,0.3);text-transform:uppercase;}
+</style>

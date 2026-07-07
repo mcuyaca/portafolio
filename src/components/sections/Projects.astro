@@ -1,0 +1,60 @@
+---
+import { PROJECTS } from '../../scripts/data/projects.js';
+import ProjectFeatured from '../projects/ProjectFeatured.astro';
+import ProjectMockup from '../projects/ProjectMockup.astro';
+import ProjectTabs from '../projects/ProjectTabs.astro';
+
+const projectImages = [
+  { img:'debtify', alt:'Debtify — Property management platform', hasMobile: true },
+  { img:'pricify', alt:'Pricify — Price tracking and analysis', hasMobile: true },
+  { img:'angular-todo', alt:'Angular Todo — Task manager', hasMobile: true },
+  { img:'codeable-keep', alt:'Codeable Keep — Notes SPA', hasMobile: true },
+  { img:'boardable', alt:'Boardable — Kanban task manager', hasMobile: true },
+  { img:'validify', alt:'Validify — CSV to PostgreSQL', hasMobile: false },
+  { img:'doggy-dom-drawer', alt:'DoggyDomDrawer — Image annotation', hasMobile: true },
+];
+---
+<section id="projects" class="section-light">
+  <div data-grain class="grain-layer"></div>
+  <div class="dashed-cols dashed-cols-light" aria-hidden="true">
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div>
+  </div>
+  <div class="section-inner projects-inner">
+    <div data-reveal class="projects-header">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <span class="section-rule"></span>
+        <span class="section-title" data-i18n="workLabel">Work</span>
+      </div>
+      <a href="https://github.com/mcuyaca" target="_blank" rel="noopener" class="link-muted" data-i18n="allProjects">All projects →</a>
+    </div>
+
+    <div data-reveal class="mc-projects-featured projects-featured">
+      <ProjectFeatured />
+      <ProjectMockup projects={projectImages} />
+    </div>
+
+    <ProjectTabs projects={PROJECTS} />
+  </div>
+</section>
+
+<style>
+.projects-inner{padding:96px 48px!important;}
+.projects-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;border-bottom:1px solid rgba(17,17,16,0.1);
+  padding-bottom:32px;margin-bottom:3px;
+}
+.projects-featured{
+  background:#FFFFFF;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  margin-bottom:3px;border-radius:2px;min-height:380px;
+}
+
+@media(max-width:768px){
+  .projects-inner{padding:60px 24px!important;}
+  .mc-projects-featured{grid-template-columns:1fr!important;}
+}
+</style>

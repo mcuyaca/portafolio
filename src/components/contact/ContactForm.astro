@@ -1,0 +1,88 @@
+---
+const turnstileSiteKey = Astro.props.turnstileSiteKey;
+---
+<div data-reveal class="contact-form-wrap">
+  <div class="form-head">
+    <div class="form-title" data-i18n="formTitle">Send a message</div>
+    <div class="form-subtitle" data-i18n="formSubtitle">Tell me what you're building — I read every message.</div>
+  </div>
+  <form class="contact-form" id="contact-form">
+    <div class="form-field">
+      <label data-i18n="formName">Name</label>
+      <input type="text" id="f-name" data-i18n-ph="formNamePh" placeholder="Your name" autocomplete="name" required>
+    </div>
+    <div class="form-field">
+      <label data-i18n="formEmail">Email</label>
+      <input type="email" id="f-email" placeholder="your@email.com" autocomplete="email" required>
+    </div>
+    <div class="form-field">
+      <label data-i18n="formMsg">Message</label>
+      <textarea id="f-msg" data-i18n-ph="formMsgPh" placeholder="Tell me about your project..." required></textarea>
+    </div>
+    <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+    <button type="submit" id="form-submit" class="btn-split btn-split-dark btn-full">
+      <span class="btn-split-text" id="form-submit-text" data-i18n="formSend">Send Message</span>
+      <span class="btn-split-icon">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </button>
+    <div id="form-feedback" class="form-feedback" style="display:none"></div>
+    <div class="form-note">
+      <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M13 4.5L6 11.5L3 8.5" stroke="oklch(60% 0.18 152)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="formNote">No spam. I reply personally.</span>
+    </div>
+  </form>
+</div>
+
+<style>
+.contact-form-wrap{
+  display:flex;flex-direction:column;gap:18px;
+  background:#FFFFFF;padding:40px;
+  border-radius:4px;border:1px solid var(--rule);
+  box-shadow:0 2px 16px rgba(0,0,0,0.04);
+}
+.form-head{display:flex;flex-direction:column;gap:5px;margin-bottom:4px;}
+.form-title{
+  font-family:'Space Grotesk',sans-serif;font-size:18px;
+  font-weight:600;color:var(--ink);
+}
+.form-subtitle{
+  font-family:'Space Grotesk',sans-serif;font-size:13px;
+  line-height:1.5;color:var(--placeholder);
+}
+.contact-form{display:flex;flex-direction:column;gap:18px;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{
+  font-family:'Space Grotesk',sans-serif;font-size:10px;
+  font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--muted);
+}
+.form-field input{
+  height:44px;padding:0 14px;
+  background:#FAFAF8;border:1px solid var(--rule);
+  border-radius:2px;color:var(--ink);
+  font-family:'Space Grotesk',sans-serif;font-size:14px;
+  outline:none;width:100%;transition:border-color 0.18s,background 0.18s;
+}
+.form-field input:focus{border-color:var(--accent);background:#FFFFFF;}
+.form-field textarea{
+  padding:12px 14px;background:#FAFAF8;
+  border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink);font-family:'Space Grotesk',sans-serif;font-size:14px;
+  outline:none;width:100%;resize:vertical;min-height:120px;line-height:1.6;
+  transition:border-color 0.18s,background 0.18s;
+}
+.form-field textarea:focus{border-color:var(--accent);background:#FFFFFF;}
+.form-note{
+  display:flex;align-items:center;gap:7px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:0.03em;color:var(--placeholder);
+}
+.form-feedback{
+  padding:12px 16px;border-radius:4px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;
+  letter-spacing:0.02em;
+}
+.form-feedback-success{background:oklch(60% 0.18 152 / 0.10);color:oklch(50% 0.18 152);border:1px solid oklch(60% 0.18 152 / 0.25);}
+.form-feedback-error{background:oklch(60% 0.22 25 / 0.10);color:oklch(50% 0.22 25);border:1px solid oklch(60% 0.22 25 / 0.25);}
+</style>

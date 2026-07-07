@@ -1,0 +1,122 @@
+<section id="experience" class="section-offwhite">
+  <div class="dashed-cols dashed-cols-offwhite" aria-hidden="true">
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div>
+  </div>
+  <div class="mc-section-pad section-inner">
+    <div data-reveal class="exp-header">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <span class="section-rule"></span>
+        <span class="section-title" data-i18n="navExp">Exp</span>
+      </div>
+    </div>
+
+    <div class="exp-timeline">
+      <div class="mc-exp-row exp-row" data-reveal>
+        <div class="mc-exp-date exp-date">
+          <div class="exp-period exp-period-active">Aug 2024 — Now</div>
+          <div class="exp-current" data-i18n="expCurrent">● CURRENT</div>
+        </div>
+        <div class="exp-line">
+          <div class="exp-dot exp-dot-active"></div>
+          <div class="exp-connector"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Full Stack Developer — EDI</div>
+          <div class="exp-company">Neelevat</div>
+          <p class="exp-desc">Built a pilot API using Babelway middleware, integrating the internal NVX portal with E2Open for WMS and TMS management. Implemented and monitored manifest, status, picking, packing and PGR flows for multiple clients, processing XML, JSON and EDIFACT messages. Developed internal tools to validate expected message output, improving traceability and error detection.</p>
+          <div class="tag-row">
+            <span class="tag">Babelway</span>
+            <span class="tag">EDIFACT</span>
+            <span class="tag">XML</span>
+            <span class="tag">JSON</span>
+            <span class="tag">SFTP</span>
+            <span class="tag">OAuth</span>
+            <span class="tag">API Key</span>
+            <span class="tag">Certificates</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-exp-row exp-row" data-reveal>
+        <div class="mc-exp-date exp-date">
+          <div class="exp-period">Apr 2020 — Aug 2023</div>
+        </div>
+        <div class="exp-line">
+          <div class="exp-dot"></div>
+          <div class="exp-connector exp-connector-short"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Project Engineer</div>
+          <div class="exp-company">Macusu</div>
+          <p class="exp-desc">Managed electrical installation projects in construction — coordinated teams, tracked scope changes, ran cost-benefit analyses, and achieved a 90% proposal approval rate with clients.</p>
+          <div class="tag-row">
+            <span class="tag">Civil Engineering</span>
+            <span class="tag">PMP</span>
+            <span class="tag">Project Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.exp-header{margin-bottom:56px;}
+.exp-timeline{max-width:760px;}
+.exp-row{
+  display:grid;grid-template-columns:160px 32px 1fr;
+  gap:0;padding:0 0 48px;position:relative;
+  transition:transform 0.18s;
+}
+.exp-row:hover{transform:translateX(4px);}
+.exp-date{padding-top:4px;padding-right:24px;}
+.exp-period{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--placeholder);line-height:1.6;
+}
+.exp-period-active{color:var(--accent);}
+.exp-current{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.1em;font-weight:700;
+  color:var(--accent);margin-top:5px;
+}
+.exp-line{display:flex;flex-direction:column;align-items:center;position:relative;}
+.exp-dot{
+  width:12px;height:12px;border-radius:50%;
+  background:#DEDAD1;border:2px solid transparent;
+  flex-shrink:0;margin-top:2px;
+}
+.exp-dot-active{
+  background:var(--accent);
+  border-color:oklch(62% 0.20 50 / 0.25);
+  box-shadow:0 0 0 4px oklch(62% 0.20 50 / 0.25);
+}
+.exp-connector{
+  flex:1;width:1px;
+  background:linear-gradient(to bottom,#DEDAD1,#DEDAD1);
+  min-height:100%;opacity:0.5;
+}
+.exp-connector-short{min-height:0;}
+.exp-content{padding-left:28px;}
+.exp-role{
+  font-family:'Space Grotesk',sans-serif;font-size:20px;
+  font-weight:600;color:var(--ink);margin-bottom:2px;
+}
+.exp-company{
+  font-family:'Space Grotesk',sans-serif;font-size:14px;
+  font-weight:500;color:var(--accent);margin-bottom:12px;
+}
+.exp-desc{
+  font-family:'Space Grotesk',sans-serif;font-size:14px;
+  line-height:1.68;color:var(--muted);margin-bottom:14px;
+}
+
+@media(max-width:768px){
+  .mc-exp-row{grid-template-columns:1fr!important;gap:8px!important;padding:24px 0!important;}
+  .mc-exp-date{padding-top:0!important;}
+  .mc-section-pad{padding:60px 24px!important;}
+}
+</style>

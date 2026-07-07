@@ -1,0 +1,69 @@
+<section id="about" class="section-light">
+  <div data-grain class="grain-layer"></div>
+  <div class="dashed-cols dashed-cols-light" aria-hidden="true">
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div><div class="dash-col"></div>
+    <div class="dash-col"></div>
+  </div>
+  <div class="mc-about-grid about-grid section-inner">
+    <div data-reveal data-reveal-dir="left" class="about-text">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <span class="section-rule"></span>
+        <span class="section-title" data-i18n="navAbout">About</span>
+      </div>
+      <div class="about-body">
+        <p data-i18n="aboutP1">Full Stack Developer with a Civil Engineering background. I build web products end-to-end, automate processes and optimize integrations.</p>
+        <p data-i18n="aboutP2">Analytical thinking, technical curiosity and a practical approach to solving complex problems.</p>
+      </div>
+      <div class="about-actions">
+        <a href="https://drive.google.com/file/d/1eMad4C7ltI0FGdIfbvc7lXEKWXxM6YIf/view?usp=sharing" target="_blank" rel="noopener" class="btn-split btn-split-dark">
+          <span class="btn-split-text" data-i18n="cvBtn">Download CV</span>
+          <span class="btn-split-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 8l4 4 4-4M2 14h12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="https://www.linkedin.com/in/mcuyaca/" target="_blank" rel="noopener" class="btn-border-light">LinkedIn →</a>
+      </div>
+    </div>
+    <div data-reveal data-reveal-dir="right" class="about-photo-wrap">
+      <img class="about-photo" src="/images/manuel.webp" alt="Manuel Cuya" width="800" height="1067" loading="lazy" decoding="async">
+      <div class="photo-caption">
+        <span class="photo-rule"></span>
+        Manuel Cuya · Lima, Peru
+        <span class="photo-rule"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.about-text{display:flex;flex-direction:column;gap:28px;}
+.about-body{display:flex;flex-direction:column;gap:14px;}
+.about-body p{
+  font-family:'Space Grotesk',sans-serif;font-size:16px;
+  line-height:1.72;color:var(--muted);
+}
+.about-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:4px;}
+.about-photo-wrap{display:flex;flex-direction:column;gap:12px;align-items:center;}
+.about-photo{
+  width:100%;max-width:360px;height:auto;
+  border-radius:4px;
+  border:1px solid rgba(17,17,16,0.08);
+  display:block;
+}
+.photo-caption{
+  display:flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--placeholder);letter-spacing:0.06em;
+}
+.photo-rule{display:block;width:14px;height:1px;background:#C8C4BC;}
+
+@media(max-width:768px){
+  .mc-about-grid{grid-template-columns:1fr!important;gap:40px!important;padding:60px 24px!important;}
+}
+</style>

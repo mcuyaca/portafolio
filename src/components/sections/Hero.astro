@@ -1,0 +1,262 @@
+<section id="hero">
+  <div aria-hidden="true" class="hero-icon-grid-wrap">
+    <div id="hero-icons" class="hero-icon-grid"></div>
+  </div>
+  <div class="dashed-cols" aria-hidden="true">
+    <div class="dash-col"></div>
+    <div class="dash-col"></div>
+    <div class="dash-col"></div>
+    <div class="dash-col"></div>
+    <div class="dash-col"></div>
+  </div>
+  <div class="hero-stripe" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="mc-hero-content hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-location">
+          <span class="loc-line"></span>
+          Full Stack Developer · Lima, Peru
+        </div>
+        <div class="hero-thinking-pill">
+          <span class="pulse-dot orange"></span>
+          <span data-i18n="heroThinking">Thinking about: async patterns</span>
+        </div>
+      </div>
+      <div class="hero-name">
+        <div class="name-line-1">MANUEL</div>
+        <div class="name-line-2">CUYA</div>
+      </div>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">Building scalable web products — from the database layer to the final pixel.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-split">
+          <span class="btn-split-text" data-i18n="heroCta1">View My Work</span>
+          <span class="btn-split-icon">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span class="btn-outline-text" data-i18n="heroCta2">Get in Touch</span>
+          <span class="btn-outline-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 3l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mc-hero-status hero-status">
+      <div class="status-block status-availability">
+        <div class="status-label">Status</div>
+        <div class="status-val">
+          <span class="pulse-dot green"></span>
+          <span data-i18n="statusOpen">Open to work</span>
+        </div>
+      </div>
+      <div class="status-block status-stats">
+        <div class="stat-cell stat-cell-left">
+          <div class="stat-label" data-i18n="expLabel">Experience</div>
+          <div class="stat-num">2<span class="stat-unit"> yrs</span></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label" data-i18n="shippedLabel">Shipped</div>
+          <div class="stat-num">7<span class="stat-plus">+</span></div>
+        </div>
+      </div>
+      <div class="status-block status-core">
+        <div class="status-label" data-i18n="coreLabel">Core stack</div>
+        <div class="core-tags">
+          <span class="core-tag">TypeScript</span>
+          <span class="core-tag">Node.js</span>
+          <span class="core-tag">React</span>
+          <span class="core-tag core-tag-accent">PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-hint" data-i18n="scroll">Scroll</div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<style>
+/* Entrance animations */
+.hero-location{animation:slideLeft 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both;}
+.hero-thinking-pill{animation:fadeIn 0.6s ease 0.2s both;}
+.name-line-1{animation:nameReveal 0.8s cubic-bezier(0.16,1,0.3,1) 0.25s both;}
+.name-line-2{animation:nameReveal 0.8s cubic-bezier(0.16,1,0.3,1) 0.38s both;}
+.hero-subtitle{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both;}
+.hero-ctas{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.62s both;}
+.hero-status{animation:slideRight 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
+
+#hero{
+  position:relative;min-height:100vh;
+  background:var(--dark);
+  display:flex;align-items:flex-start;overflow:hidden;
+}
+.hero-icon-grid-wrap{
+  position:absolute;inset:-300px;z-index:0;
+  pointer-events:none;overflow:hidden;
+}
+.hero-icon-grid{
+  display:grid;
+  grid-template-columns:repeat(22,72px);
+  grid-auto-rows:72px;
+  gap:44px;
+  animation:diagDrift 20s linear infinite;
+}
+.hero-icon-grid :global(.hn){
+  font-size:34px;color:var(--cream);opacity:0.07;
+  display:flex;align-items:center;justify-content:center;
+  width:72px;height:72px;
+}
+#hero .dashed-cols{padding:0 48px;}
+#hero .dash-col{border-left:1px dashed rgba(245,240,230,0.05);}
+.hero-stripe{
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--accent);z-index:2;
+}
+.hero-vignette{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 50%,transparent 30%,rgba(14,14,12,0.7) 100%);
+  z-index:1;pointer-events:none;
+}
+.hero-inner{
+  --hero-primary:var(--cream);
+  --hero-accent:var(--accent);
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;gap:48px;
+  padding:calc(64px + 80px) 96px 80px;width:100%;box-sizing:border-box;
+  min-height:100vh;
+}
+.hero-left{
+  display:flex;flex-direction:column;gap:24px;max-width:640px;
+}
+.hero-eyebrow{display:flex;flex-direction:column;gap:12px;}
+.hero-location{
+  display:flex;align-items:center;gap:12px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);
+}
+.loc-line{display:block;width:24px;height:1px;background:var(--accent);}
+.hero-thinking-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px;border:1px solid rgba(245,240,230,0.10);
+  border-radius:99px;width:fit-content;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:rgba(245,240,230,0.45);letter-spacing:0.05em;
+  transition:border-color 0.18s;
+}
+.hero-thinking-pill:hover{border-color:rgba(245,240,230,0.25);}
+.hero-name{line-height:0.88;}
+.name-line-1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(80px,11vw,152px);line-height:0.88;
+  color:var(--hero-primary);letter-spacing:0.01em;
+}
+.name-line-2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(80px,11vw,152px);line-height:0.88;
+  color:var(--hero-accent);letter-spacing:0.01em;
+}
+.hero-subtitle{
+  font-family:'Space Grotesk',sans-serif;font-size:16px;line-height:1.7;
+  color:rgba(245,240,230,0.72);max-width:400px;
+}
+.hero-ctas{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:8px;
+}
+.hero-ctas .btn-split-text{
+  background:rgba(245,240,230,0.06);
+  border-color:rgba(245,240,230,0.10);
+  color:var(--hero-primary);
+}
+.hero-ctas .btn-split-icon{background:var(--hero-accent);}
+.hero-ctas .btn-outline-text{
+  border-color:rgba(245,240,230,0.52);
+  background:rgba(245,240,230,0.04);
+  color:rgba(245,240,230,0.86);
+}
+.hero-ctas .btn-outline-icon{
+  border-color:rgba(245,240,230,0.52);
+  background:rgba(245,240,230,0.08);
+  color:rgba(245,240,230,0.78);
+}
+.hero-ctas .btn-split:hover,
+.hero-ctas .btn-outline:hover{box-shadow:none;}
+.hero-ctas .btn-outline:hover .btn-outline-text,
+.hero-ctas .btn-outline:hover .btn-outline-icon{
+  border-color:rgba(245,240,230,0.78);
+  background:rgba(245,240,230,0.12);
+  color:var(--hero-primary);
+}
+
+.hero-status{
+  display:flex;flex-direction:column;gap:0;
+  padding-left:48px;border-left:1px solid rgba(245,240,230,0.07);
+  flex-shrink:0;min-width:220px;
+}
+.status-block{padding:22px 0;border-bottom:1px solid rgba(245,240,230,0.06);}
+.status-availability{padding-top:0;}
+.status-core{border-bottom:none;padding-bottom:0;}
+.status-label{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(245,240,230,0.28);margin-bottom:10px;
+}
+.status-val{display:flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;color:var(--cream);}
+.status-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;border-bottom:1px solid rgba(245,240,230,0.06);}
+.stat-cell{padding:22px 0;}
+.stat-cell-left{border-right:1px solid rgba(245,240,230,0.06);padding-right:0;}
+.stat-label{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(245,240,230,0.28);margin-bottom:8px;
+}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;font-size:46px;
+  line-height:1;color:var(--hero-primary);letter-spacing:0.01em;
+}
+.stat-unit,.stat-plus{color:var(--hero-accent);}
+.stat-unit{font-size:24px;}
+.core-tags{display:flex;flex-wrap:wrap;gap:5px;padding-top:10px;}
+.core-tag{
+  font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 10px;
+  background:rgba(245,240,230,0.05);border:1px solid rgba(245,240,230,0.10);
+  color:rgba(245,240,230,0.6);border-radius:2px;
+}
+.core-tag-accent{
+  background:oklch(62% 0.20 50 / 0.10);
+  border-color:oklch(62% 0.20 50 / 0.28);
+  color:var(--accent);
+}
+
+.hero-scroll{
+  position:absolute;bottom:36px;left:50%;
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;
+}
+.scroll-hint{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(245,240,230,0.2);
+}
+.scroll-line{
+  width:1px;height:44px;
+  background:linear-gradient(to bottom,rgba(245,240,230,0.25),transparent);
+}
+
+@media(max-width:768px){
+  .mc-hero-content{flex-direction:column!important;padding:100px 24px 60px!important;}
+  .mc-hero-status{
+    border-left:none!important;padding-left:0!important;
+    border-top:1px solid rgba(245,240,230,0.07);
+    padding-top:24px!important;width:100%!important;
+  }
+}
+@media(max-width:480px){
+  .name-line-1,.name-line-2{font-size:72px!important;line-height:0.9!important;}
+}
+</style>
