@@ -2,6 +2,8 @@
 
 Personal portfolio built with Astro. Single-page, bilingual (EN/ES), fully static with a serverless contact form.
 
+> Previously this portfolio was a React/Vite/Tailwind SPA. It was rewritten to a single Astro page with vanilla CSS/JS to keep the bundle tiny and the markup explicit. Older git history (commits like `Update Hero.tsx`, `Update Projects.tsx`) refers to that pre-rewrite codebase.
+
 ## Tech
 
 - [Astro 7](https://astro.build) — static site generator
