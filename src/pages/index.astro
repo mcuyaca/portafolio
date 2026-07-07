@@ -400,25 +400,43 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
       <div id="proj-mockup-wrap" class="proj-mockup-wrap">
         <div class="proj-mockup-inner">
           <div id="mock-0" class="proj-img-slot">
-            <img src="/images/boardable.webp" alt="Boardable — Kanban task manager">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/boardable.webp">
+              <img src="/images/boardable.webp" alt="Boardable — Kanban task manager" loading="lazy">
+            </picture>
           </div>
           <div id="mock-1" class="proj-img-slot" style="display:none">
-            <img src="/images/validify.webp" alt="Validify — CSV to PostgreSQL">
+            <img src="/images/validify.webp" alt="Validify — CSV to PostgreSQL" loading="lazy">
           </div>
           <div id="mock-2" class="proj-img-slot" style="display:none">
-            <img src="/images/codeable-keep.webp" alt="Codeable Keep — Notes SPA">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/codeable-keep.webp">
+              <img src="/images/codeable-keep.webp" alt="Codeable Keep — Notes SPA" loading="lazy">
+            </picture>
           </div>
           <div id="mock-3" class="proj-img-slot" style="display:none">
-            <img src="/images/angular-todo.webp" alt="Angular Todo — Task manager">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/angular-todo.webp">
+              <img src="/images/angular-todo.webp" alt="Angular Todo — Task manager" loading="lazy">
+            </picture>
           </div>
           <div id="mock-4" class="proj-img-slot" style="display:none">
-            <img src="/images/doggy-dom-drawer.webp" alt="DoggyDomDrawer — Image annotation">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/doggy-dom-drawer.webp">
+              <img src="/images/doggy-dom-drawer.webp" alt="DoggyDomDrawer — Image annotation" loading="lazy">
+            </picture>
           </div>
           <div id="mock-5" class="proj-img-slot" style="display:none">
-            <img src="/images/pricify.webp" alt="Pricify — Price tracking and analysis">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/pricify.webp">
+              <img src="/images/pricify.webp" alt="Pricify — Price tracking and analysis" loading="lazy">
+            </picture>
           </div>
           <div id="mock-6" class="proj-img-slot" style="display:none">
-            <img src="/images/debtify.webp" alt="Debtify — Property management platform">
+            <picture>
+              <source media="(max-width:768px)" srcset="/images/mobile/debtify.webp">
+              <img src="/images/debtify.webp" alt="Debtify — Property management platform" loading="lazy">
+            </picture>
           </div>
         </div>
       </div>
@@ -1623,6 +1641,7 @@ a,button{cursor:none;}
   }
   .mc-about-grid{grid-template-columns:1fr!important;gap:40px!important;padding:60px 24px!important;}
   .mc-projects-featured{grid-template-columns:1fr!important;}
+  .proj-mockup-wrap{min-height:480px!important;}
   .mc-projects-tabs{grid-template-columns:1fr 1fr!important;}
   .mc-exp-row{grid-template-columns:1fr!important;gap:8px!important;padding:24px 0!important;}
   .mc-exp-date{padding-top:0!important;}
