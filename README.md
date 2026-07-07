@@ -22,11 +22,14 @@ src/
     api/
       contact.ts      # Serverless contact form — Turnstile + Resend
 public/
-  images/             # Project screenshots (5 projects)
-  favicon.svg         # Brand favicon /M
-  og-image.svg        # Social preview placeholder (replace with real 1200×630 PNG)
-.atl/
-  skill-registry.md   # SDD skill registry
+  images/             # Project screenshots + author photo (manuel.webp)
+  favicon.svg
+  og-image.png        # Social preview (1200x630)
+CLAUDE.md             # Project guide for AI agents
+.env.example          # Template for env vars (commit-safe)
+astro.config.mjs
+tsconfig.json
+package.json
 ```
 
 ## Sections
@@ -34,48 +37,61 @@ public/
 | # | Section | Status |
 |---|---------|--------|
 | 01 | Hero | Name, status panel, stats, core stack |
-| 02 | About | Bio, Download CV, LinkedIn |
+| 02 | About | Bio, Download CV, LinkedIn, author photo |
 | 03 | Stack | Animated marquee + tech grid |
 | 04 | Work | 5 projects with screenshots and carousel |
 | 05 | Experience | Neelevat (current) + Macusu (civil engineering) |
-| 06 | Writing | Placeholder — add posts or remove |
+| 06 | Writing | Coming soon |
 | 07 | Contact | Form (Turnstile + Resend) + contact cards |
 
 ## Env vars
 
-Create `.env` at the root (or set in Vercel dashboard):
+Copy `.env.example` to `.env` (or set in Vercel dashboard):
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
 TURNSTILE_SECRET_KEY=0x4AAAAAAA_xxxxxxxxxxxxxxxxxxxxxxxxxx
+PUBLIC_TURNSTILE_SITE_KEY=0x4AAAAAAA_xxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Also replace `YOUR_TURNSTILE_SITE_KEY` in `src/pages/index.astro` (line ~638) with the **Site key** from Cloudflare Turnstile dashboard.
+- `RESEND_API_KEY` — server-only, used in `src/pages/api/contact.ts`.
+- `TURNSTILE_SECRET_KEY` — server-only, verifies the Turnstile token.
+- `PUBLIC_TURNSTILE_SITE_KEY` — **public, exposed in frontend HTML at build time**. The `PUBLIC_` prefix is required by Astro so the value reaches the client. Used in `src/pages/index.astro` frontmatter.
 
 ## Dev
 
 ```bash
 npm install
 npm run dev       # http://localhost:4321
+npm run build     # local production build
+npm run preview   # preview the build locally
 ```
 
 ## Deploy
 
-Push to `main` — Vercel deploys automatically.
+Vercel auto-deploys on push. The production branch is `main`; the rewrite currently lives on `feat/new-portfolio-design`.
 
 ```bash
-npm run build     # local build check
-npm run preview   # preview the build locally
+git push -u origin feat/new-portfolio-design   # or merge to main first
 ```
+
+For the contact form to work in production, add the three env vars above in the Vercel project settings — `.env` is gitignored and never reaches Vercel automatically.
+
+DNS for the custom domain (`mcuyaca.dev`):
+
+```
+A     @     76.76.21.21
+CNAME www   cname.vercel-dns.com
+```
+
+Add the domain in Vercel → Project → Settings → Domains. Vercel issues the HTTPS certificate automatically.
 
 ## Pending
 
-- [ ] Replace `YOUR_TURNSTILE_SITE_KEY` in `index.astro` with real Cloudflare key
-- [ ] Add `RESEND_API_KEY` + `TURNSTILE_SECRET_KEY` in Vercel env vars
-- [ ] Add real About photo (replace placeholder slot)
-- [ ] Replace `public/og-image.svg` with real 1200×630 PNG screenshot
-- [ ] Update canonical URL (`https://mcuya.dev`) once domain is set
-- [ ] Writing section — add real posts or remove the section
+- [ ] Writing section — replace "Coming soon" with real posts
+- [ ] (Optional) Add a LICENSE file (MIT) — currently all rights reserved
+- [ ] (Optional) Rate-limiting on `/api/contact`
+- [ ] (Optional) Smoke test for `/api/contact`
 
 ## Contact
 
