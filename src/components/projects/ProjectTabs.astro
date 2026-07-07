@@ -1,0 +1,48 @@
+---
+const { projects } = Astro.props;
+---
+<div class="mc-projects-tabs proj-tabs" id="proj-tabs">
+  {projects.map((p, i) => (
+    <div class="proj-tab" class:list={{ 'proj-tab-active': i === 0 }} data-proj={i}>
+      <div class="tab-num">{p.num}</div>
+      <div class="tab-title">{p.title}</div>
+      <div class="tab-meta">{p.type} · {p.year}</div>
+    </div>
+  ))}
+</div>
+
+<style>
+.proj-tabs{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:3px;
+}
+.proj-tab{
+  background:#FFFFFF;padding:20px 24px;
+  border-top:3px solid transparent;
+  transition:border-color 0.2s,background 0.2s,transform 0.18s;
+  cursor:pointer;
+}
+.proj-tab:hover{background:#FAFAF8;transform:translateY(-2px);}
+.proj-tab-active{border-top-color:var(--accent)!important;}
+.tab-num{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--placeholder);margin-bottom:8px;
+  transition:color 0.2s;
+}
+.proj-tab-active .tab-num{color:var(--accent);}
+.tab-title{
+  font-family:'Bebas Neue',sans-serif;font-size:18px;
+  line-height:1.1;color:var(--placeholder);margin-bottom:5px;
+  transition:color 0.2s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.proj-tab-active .tab-title{color:var(--ink);}
+.tab-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--placeholder);}
+
+@media(max-width:768px){
+  .mc-projects-tabs{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:480px){
+  .mc-projects-tabs{grid-template-columns:1fr!important;}
+}
+</style>
