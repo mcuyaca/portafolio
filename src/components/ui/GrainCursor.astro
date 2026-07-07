@@ -1,0 +1,15 @@
+<div id="mc-cursor">
+  <div class="cur-h"></div>
+  <div class="cur-v"></div>
+</div>
+
+<style>
+#mc-cursor{
+  position:fixed;top:0;left:0;width:24px;height:24px;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:transform 0.15s ease,opacity 0.2s ease;
+}
+.cur-h{position:absolute;top:50%;left:0;right:0;height:2px;background:var(--accent);opacity:0.55;transform:translateY(-50%);}
+.cur-v{position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--accent);opacity:0.55;transform:translateX(-50%);}
+</style>

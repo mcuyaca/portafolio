@@ -1,0 +1,12 @@
+---
+const { num, label, light } = Astro.props;
+const cls = light ? 'section-header-light' : '';
+const numCls = light ? 'section-num-light' : '';
+const ruleCls = light ? 'section-rule-light' : '';
+const titleCls = light ? 'section-title-light' : '';
+---
+<div class="section-header {cls}">
+  <span class="section-num {numCls}">{num}</span>
+  <span class="section-rule {ruleCls}"></span>
+  <span class="section-title {titleCls}" data-i18n={label}>{label}</span>
+</div>
