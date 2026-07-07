@@ -7,7 +7,7 @@ export const PROJECTS = [
     stat:'LIVE', statLabel:'deb.mcuyaca.dev',
     demoUrl:'https://deb.mcuyaca.dev/', githubUrl:'https://github.com/mcuyaca/Debtify' },
   { num:'02', title:'PRICIFY',
-    type:'Full Stack', year:'2024',
+    type:'Full Stack', year:'2025',
     tags:['Next.js','PostgreSQL','Tailwind','Shadcn UI'],
     desc:'Web app to track and analyze product price history on platforms like eBay — graphical visualization for better purchase decisions. Web scraping pipeline plus an automated cron job that updates prices periodically.',
     descEs:'App web para rastrear y analizar el historial de precios de productos en plataformas como eBay — visualización gráfica para mejores decisiones de compra. Pipeline de web scraping más un cron job automatizado que actualiza los precios periódicamente.',
