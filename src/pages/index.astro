@@ -528,36 +528,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
         <span class="section-rule section-rule-light"></span>
         <span class="section-title section-title-light" data-i18n="navWriting">Writing</span>
       </div>
-      <span class="link-muted-dark" style="opacity:0.4;pointer-events:none;" data-i18n="allPosts">All posts →</span>
+      <span class="link-muted-dark" style="opacity:0.4;pointer-events:none;" data-i18n="writingSoon">Coming soon →</span>
     </div>
 
     <div class="writing-list">
-      <div class="post-row" style="pointer-events:none;opacity:0.7;" data-reveal>
-        <div class="post-meta">Jun 2026 · 6 min read</div>
-        <div class="post-title">Building Scalable APIs with Node.js: Patterns That Actually Work in Production</div>
-        <p class="post-excerpt">Rate limiting, auth middleware, request logging — the architectural decisions I've validated across real projects.</p>
-        <div class="tag-row tag-row-dark">
-          <span class="tag tag-dark">Node.js</span>
-          <span class="tag tag-dark">Architecture</span>
-        </div>
-      </div>
-      <div class="post-row" style="pointer-events:none;opacity:0.7;" data-reveal>
-        <div class="post-meta">May 2026 · 4 min read</div>
-        <div class="post-title">Why I Switched from MongoDB to PostgreSQL (and When I'd Go Back)</div>
-        <p class="post-excerpt">Real trade-offs from a real migration — schema design, query performance, and the surprising parts.</p>
-        <div class="tag-row tag-row-dark">
-          <span class="tag tag-dark">Database</span>
-          <span class="tag tag-dark">PostgreSQL</span>
-        </div>
-      </div>
-      <div class="post-row post-row-last" style="pointer-events:none;opacity:0.7;" data-reveal>
-        <div class="post-meta">Apr 2026 · 8 min read</div>
-        <div class="post-title">The React Mental Model I Wish I Had From Day One</div>
-        <p class="post-excerpt">State as a snapshot, effects as synchronization — the two ideas that finally made everything click.</p>
-        <div class="tag-row tag-row-dark">
-          <span class="tag tag-dark">React</span>
-          <span class="tag tag-dark">Fundamentals</span>
-        </div>
+      <div class="post-row post-row-last" data-reveal>
+        <div class="post-meta" data-i18n="writingMeta">In progress</div>
+        <div class="post-title" data-i18n="writingTitle">I'm writing my first articles.</div>
+        <p class="post-excerpt" data-i18n="writingExcerpt">Topics I care about: web architecture, developer experience, and building honest systems. Coming soon.</p>
       </div>
     </div>
   </div>
@@ -1627,6 +1605,10 @@ const TR = {
     coreLabel:'Core stack', scroll:'Scroll',
     expCurrent:'● CURRENT',
     allPosts:'All posts →',
+    writingSoon:'Coming soon →',
+    writingMeta:'In progress',
+    writingTitle:"I'm writing my first articles.",
+    writingExcerpt:'Topics I care about: web architecture, developer experience, and building honest systems. Coming soon.',
     contactLabel:'Contact',
     contactP:"Have a project in mind or just want to talk tech? I'm always open to new conversations.",
     formTitle:'Send a message', formName:'Name', formEmail:'Email', formMsg:'Message',
@@ -1649,6 +1631,10 @@ const TR = {
     coreLabel:'Stack principal', scroll:'Bajar',
     expCurrent:'● ACTUAL',
     allPosts:'Todos los posts →',
+    writingSoon:'Próximamente →',
+    writingMeta:'En progreso',
+    writingTitle:'Estoy escribiendo mis primeros artículos.',
+    writingExcerpt:'Temas que me importan: arquitectura web, experiencia de desarrollo y construir sistemas honestos. Próximamente.',
     contactLabel:'Contacto',
     contactP:'¿Tenés un proyecto en mente o simplemente querés hablar de tecnología? Siempre estoy abierto a nuevas conversaciones.',
     formTitle:'Enviar mensaje', formName:'Nombre', formEmail:'Email', formMsg:'Mensaje',
