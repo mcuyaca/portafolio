@@ -1,4 +1,5 @@
 ---
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURNSTILE_SITE_KEY';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -632,7 +633,7 @@
           <label data-i18n="formMsg">Message</label>
           <textarea id="f-msg" data-i18n-ph="formMsgPh" placeholder="Tell me about your project..." required></textarea>
         </div>
-        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="light"></div>
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
         <button type="submit" id="form-submit" class="btn-split btn-split-dark btn-full">
           <span class="btn-split-text" id="form-submit-text" data-i18n="formSend">Send Message</span>
           <span class="btn-split-icon">
