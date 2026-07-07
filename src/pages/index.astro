@@ -415,11 +415,17 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
           <div id="mock-4" class="proj-img-slot" style="display:none">
             <img src="/images/doggy-dom-drawer.png" alt="DoggyDomDrawer — Image annotation">
           </div>
+          <div id="mock-5" class="proj-img-slot" style="display:none">
+            <img src="/images/pricify.png" alt="Pricify — Price tracking and analysis">
+          </div>
+          <div id="mock-6" class="proj-img-slot" style="display:none">
+            <img src="/images/debtify.png" alt="Debtify — Property management platform">
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 5-col tabs -->
+    <!-- 7-col tabs -->
     <div class="mc-projects-tabs proj-tabs" id="proj-tabs">
       <div class="proj-tab proj-tab-active" data-proj="0">
         <div class="tab-num">01</div>
@@ -445,6 +451,16 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? 'YOUR_TURN
         <div class="tab-num">05</div>
         <div class="tab-title">DOGGY DOM DRAWER</div>
         <div class="tab-meta">Astro · 2024</div>
+      </div>
+      <div class="proj-tab" data-proj="5">
+        <div class="tab-num">06</div>
+        <div class="tab-title">PRICIFY</div>
+        <div class="tab-meta">Next.js · 2024</div>
+      </div>
+      <div class="proj-tab" data-proj="6">
+        <div class="tab-num">07</div>
+        <div class="tab-title">DEBTIFY</div>
+        <div class="tab-meta">Next.js · 2025</div>
       </div>
     </div>
   </div>
@@ -1271,7 +1287,7 @@ a,button{cursor:none;}
 
 /* project tabs */
 .proj-tabs{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:3px;
+  display:grid;grid-template-columns:repeat(7,1fr);gap:3px;
 }
 .proj-tab{
   background:#FFFFFF;padding:20px 24px;
@@ -1695,6 +1711,20 @@ const PROJECTS = [
     descEs:'Agregá texto o dibujos a cualquier imagen directamente en el navegador — exportá el resultado como archivo, sin backend.',
     stat:'DOM', statLabel:'in-browser image annotation', bg:'#1A1816',
     demoUrl:'https://doggy-dom-drawer.vercel.app/', githubUrl:'https://github.com/mcuyaca/DoggyDomDrawer' },
+  { num:'06', title:'PRICIFY',
+    type:'Full Stack', year:'2024',
+    tags:['Next.js','PostgreSQL','Tailwind','Shadcn UI'],
+    desc:'Web app to track and analyze product price history on platforms like eBay — graphical visualization for better purchase decisions. Web scraping pipeline plus an automated cron job that updates prices periodically.',
+    descEs:'App web para rastrear y analizar el historial de precios de productos en plataformas como eBay — visualización gráfica para mejores decisiones de compra. Pipeline de web scraping más un cron job automatizado que actualiza los precios periódicamente.',
+    stat:'LIVE', statLabel:'demo deployed on Vercel', bg:'#0E0E0C',
+    demoUrl:'https://pricifyy.vercel.app/', githubUrl:'https://github.com/mcuyaca/pricify' },
+  { num:'07', title:'DEBTIFY',
+    type:'Full Stack', year:'2025',
+    tags:['Next.js','Supabase','Cloudflare R2','Google Gemini','Telegram','Resend'],
+    desc:'Property management platform for rentals, contracts, expenses and payment monitoring across multiple entities. Auto-processes receipts and IDs with Google Gemini OCR, sends Telegram and email notifications, and enforces row-level security at the Postgres layer.',
+    descEs:'Plataforma de property management para alquileres, contratos, gastos y monitoreo de pagos para múltiples entidades. Procesa recibos y DNIs con Google Gemini OCR, envía notificaciones vía Telegram y email, y aplica seguridad por filas (RLS) a nivel Postgres.',
+    stat:'LIVE', statLabel:'deb.mcuyaca.dev', bg:'#1A1816',
+    demoUrl:'https://deb.mcuyaca.dev/', githubUrl:'https://github.com/mcuyaca/Debtify' },
 ];
 
 // ── Grain texture ───────────────────────────────────────────────────────────
@@ -1883,7 +1913,7 @@ function renderProject(idx) {
   }
 
   // mockups
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     const m = document.getElementById('mock-' + i);
     if (m) m.style.display = i === idx ? 'flex' : 'none';
   }
