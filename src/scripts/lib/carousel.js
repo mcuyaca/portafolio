@@ -1,5 +1,6 @@
 import { PROJECTS } from '../data/projects.js';
 import { getLang } from './i18n.js';
+import { TR } from '../data/translations.js';
 
 let currentProj = 0;
 
@@ -10,7 +11,7 @@ export function getCurrentProj() {
 export function renderProject(idx) {
   const p = PROJECTS[idx];
   const lang = getLang();
-  const t = window.TR || null;
+  const t = TR[lang];
 
   const projNum = document.getElementById('proj-num');
   const projTitle = document.getElementById('proj-title');
@@ -57,8 +58,23 @@ export function renderProject(idx) {
   });
 }
 
+export function lockFeaturedHeight() {
+  const card = document.querySelector('.mc-projects-featured');
+  if (!card) return;
+  card.style.minHeight = '';
+  let max = 0;
+  for (let i = 0; i < PROJECTS.length; i++) {
+    renderProject(i);
+    max = Math.max(max, card.offsetHeight);
+  }
+  renderProject(currentProj);
+  card.style.minHeight = max + 'px';
+}
+
 export function initCarousel() {
-  document.getElementById('proj-tabs').addEventListener('click', e => {
+  const tabs = document.getElementById('proj-tabs');
+  if (!tabs) return;
+  tabs.addEventListener('click', e => {
     const tab = e.target.closest('.proj-tab');
     if (!tab) return;
     const idx = parseInt(tab.dataset.proj, 10);
@@ -69,4 +85,12 @@ export function initCarousel() {
   });
 
   renderProject(0);
+  lockFeaturedHeight();
+  if (document.fonts) document.fonts.ready.then(lockFeaturedHeight);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(lockFeaturedHeight, 150);
+  });
 }

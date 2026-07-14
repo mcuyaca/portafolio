@@ -3,7 +3,7 @@ import { initCursor } from './lib/cursor.js';
 import { initProgressBar, initReveal } from './lib/scroll.js';
 import { initClock } from './lib/clock.js';
 import { initLang, applyLang } from './lib/i18n.js';
-import { initCarousel, renderProject } from './lib/carousel.js';
+import { initCarousel } from './lib/carousel.js';
 import { initForm } from './lib/form.js';
 
 document.documentElement.classList.add('js-cursor');
@@ -35,7 +35,7 @@ initReveal();
 (function buildIconGrid() {
   const grid = document.getElementById('hero-icons');
   if (!grid) return;
-  const icons = ['command','code','folder','clock','cog','bug'];
+  const icons = ['command','bug','pc','branch','code-block','bracket-curly'];
   const frag = document.createDocumentFragment();
   for (let i = 0; i < 360; i++) {
     const el = document.createElement('i');

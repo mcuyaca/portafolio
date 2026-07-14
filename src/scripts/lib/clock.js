@@ -1,7 +1,7 @@
 export function initClock() {
   const clock = document.getElementById('footer-clock');
+  if (!clock) return;
   function tick() {
-    if (!clock) return;
     const now = new Date();
     const timeStr = now.toLocaleTimeString('en-US', {
       timeZone: 'America/Lima',

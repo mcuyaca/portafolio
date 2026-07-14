@@ -1,4 +1,5 @@
 import { TR } from '../data/translations.js';
+import { lockFeaturedHeight } from './carousel.js';
 
 let lang = 'en';
 
@@ -29,10 +30,14 @@ export function applyLang(l) {
     enPill.style.borderColor = l === 'en' ? 'rgba(245,240,230,0.25)' : 'rgba(245,240,230,0.1)';
     esPill.style.borderColor = l === 'es' ? 'rgba(245,240,230,0.25)' : 'rgba(245,240,230,0.1)';
   }
+
+  lockFeaturedHeight();
 }
 
 export function initLang() {
-  document.getElementById('lang-toggle').addEventListener('click', () => {
+  const toggle = document.getElementById('lang-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
     applyLang(lang === 'en' ? 'es' : 'en');
   });
   applyLang('en');
