@@ -39,7 +39,7 @@ package.json
 | 01 | Hero | Name, status panel, stats, core stack |
 | 02 | About | Bio, Download CV, LinkedIn, author photo |
 | 03 | Stack | Animated marquee + tech grid |
-| 04 | Work | 5 projects with screenshots and carousel |
+| 04 | Work | 8 projects with screenshots and carousel |
 | 05 | Experience | Neelevat (current) + Macusu (civil engineering) |
 | 06 | Writing | Coming soon |
 | 07 | Contact | Form (Turnstile + Resend) + contact cards |
