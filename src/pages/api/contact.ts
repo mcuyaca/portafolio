@@ -13,6 +13,14 @@ const PayloadSchema = z.object({
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
 export const POST: APIRoute = async ({ request }) => {
   const json = (body: object, status: number) =>
     new Response(JSON.stringify(body), {
@@ -34,19 +42,25 @@ export const POST: APIRoute = async ({ request }) => {
   }
   const { name, email, message, token } = parsed.data;
 
-  const verification = await fetch(
-    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        secret: import.meta.env.TURNSTILE_SECRET_KEY,
-        response: token,
-      }),
-    }
-  );
+  let success: boolean;
+  try {
+    const verification = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          secret: import.meta.env.TURNSTILE_SECRET_KEY,
+          response: token,
+        }),
+      }
+    );
+    ({ success } = await verification.json());
+  } catch (err) {
+    console.error('Turnstile verification error:', err);
+    return json({ error: 'Verification service unavailable' }, 502);
+  }
 
-  const { success } = await verification.json();
   if (!success) {
     return json({ error: 'Bot verification failed' }, 403);
   }
@@ -57,9 +71,9 @@ export const POST: APIRoute = async ({ request }) => {
     replyTo: email,
     subject: `Portfolio — message from ${name}`,
     html: `
-      <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>
+      <p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
       <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, '<br>')}</p>
+      <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
     `,
   });
 

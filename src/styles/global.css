@@ -5,7 +5,7 @@ body{font-family:'Space Grotesk',sans-serif;background:#EDECEA;overflow-x:hidden
 html:not(.js-cursor) body{cursor:auto;}
 ::selection{background:oklch(62% 0.20 50 / 0.2);}
 input,textarea{cursor:text;}
-a,button{cursor:none;}
+html.js-cursor a,html.js-cursor button,html.js-cursor .proj-tab{cursor:none;}
 
 :root{
   --accent:oklch(62% 0.20 50);

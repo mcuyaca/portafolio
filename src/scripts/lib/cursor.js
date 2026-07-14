@@ -10,7 +10,7 @@ export function initCursor() {
     cursor.style.top = e.clientY + 'px';
   });
 
-  document.querySelectorAll('a,button').forEach(el => {
+  document.querySelectorAll('a,button,.proj-tab').forEach(el => {
     el.addEventListener('mouseenter', () => {
       if (curH) { curH.style.background = '#F5F0E6'; curH.style.opacity = '0.9'; }
       if (curV) { curV.style.background = '#F5F0E6'; curV.style.opacity = '0.9'; }

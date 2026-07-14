@@ -32,6 +32,22 @@ tsconfig.json
 package.json
 ```
 
+## Assets
+
+Image conventions for `public/images/`. Keep new screenshots on-spec so the
+carousel and mobile `<picture>` sources stay consistent.
+
+| Asset | Size (px) | Aspect | Path |
+| --- | --- | --- | --- |
+| Project screenshot (desktop) | 1200×800 | 3:2 | `public/images/<slug>.webp` |
+| Project screenshot (mobile) | 800×1200 | 2:3 | `public/images/mobile/<slug>.webp` |
+| Author photo | 800×1067 | 3:4 | `public/images/manuel.webp` |
+| Social preview | 1200×630 | 1.91:1 | `public/og-image.png` |
+
+- Export screenshots as WebP.
+- A project only needs a mobile variant when its `Projects.astro` entry sets
+  `hasMobile: true`; that enables the `(max-width:768px)` `<source>`.
+
 ## Sections
 
 | # | Section | Status |

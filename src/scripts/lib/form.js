@@ -24,13 +24,20 @@ export function initForm() {
     const message = document.getElementById('f-msg').value.trim();
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
+    const t = TR[getLang()];
+
     if (!name || !email || !message) {
-      showFeedback('Please fill in all fields.', 'error');
+      showFeedback(t.formErrorFields, 'error');
+      return;
+    }
+
+    if (!token) {
+      showFeedback(t.formTokenMissing, 'error');
       return;
     }
 
     if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
-    if (submitText) submitText.textContent = 'Sending…';
+    if (submitText) submitText.textContent = t.formSending;
     if (feedback) feedback.style.display = 'none';
 
     try {
@@ -43,15 +50,15 @@ export function initForm() {
       const data = await res.json();
 
       if (res.ok && data.success) {
-        showFeedback('✓ Message sent. I\'ll reply within 24h.', 'success');
+        showFeedback(t.formSuccess, 'success');
         contactForm.reset();
         if (window.turnstile) window.turnstile.reset();
       } else {
-        showFeedback(data.error || 'Something went wrong. Try again.', 'error');
+        showFeedback(data.error || t.formErrorGeneric, 'error');
         if (window.turnstile) window.turnstile.reset();
       }
     } catch {
-      showFeedback('Network error. Check your connection.', 'error');
+      showFeedback(TR[getLang()].formErrorNetwork, 'error');
     } finally {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       if (submitText) submitText.textContent = TR[getLang()]?.formSend || 'Send Message';
